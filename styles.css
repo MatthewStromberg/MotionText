@@ -1,41 +1,41 @@
-.col-sm-4 {
-	height: 400px;
+.col-xs-4 {
+    height: 35vh;
 }
 
 #one {
-	background-color: aqua;
+    background-color: aqua;
 }
 
 #two {
-	background-color: plum;
+    background-color: plum;
 }
 
 #three {
-	background-color: greenyellow;
+    background-color: greenyellow;
 }
 
 #time {
-	font-size: 2vw;
-	color: white;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	top: 150px;
-	position: absolute;
-	z-index: 100;
-	animation: mymove 4s linear infinite;
+    font-size: 2vw;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    top: 15vh;
+    position: absolute;
+    z-index: 100;
+    animation: mymove 3s linear infinite;
 }
 
 .col-sm-12 {
-	padding-right: 0px !important;
+    padding-right: 0px !important;
 }
 
 @keyframes mymove {
-	0% {
-		left: 1vw;
-	}
-	50% {
-		left: 44vw;
-	}
-	100% {
-		left: 1vw;
-	}
+    0% {
+        left: 1vw;
+    }
+    50% {
+        left: 80vw;
+    }
+    100% {
+        left: 1vw;
+    }
 }

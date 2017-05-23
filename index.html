@@ -1,29 +1,36 @@
 <!DOCTYPE html>
-<html lang="">
+<html>
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-	<div class="row col-sm-12"> <span id="time"></span>
-		<div class="col-sm-4" id="one"></div>
-		<div class="col-sm-4" id="two"></div>
-		<div class="col-sm-4" id="three"></div>
-	</div>
-	<script>
-		function updateClock() {
-			$("#time").text(Date());
-			// call this function again in 1000ms
-			setTimeout(updateClock, 1000);
-		}
-		updateClock(); // initial call
-	</script>
+    <div> <span id="time"></span>
+        <div class="col-xs-4" id="one"></div>
+        <div class="col-xs-4" id="two"></div>
+        <div class="col-xs-4" id="three"></div>
+    </div>
+    <script>
+        function updateClock() {
+            var myDate = "";
+            var date = new Date();
+            var hours = ((date.getHours() + 11) % 12 + 1);
+            var minutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+            var seconds = (date.getSeconds() < 10 ? "0" : "") + date.getSeconds();
+            var period = (date.getHours() > 11 ? "PM" : "AM");
+            myDate += hours + ":" + minutes + ":" + seconds + period + " " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
+            $("#time").text(myDate);
+            // call this function again in 1000ms
+            setTimeout(updateClock, 1000);
+        }
+        updateClock(); // initial call
+    </script>
 </body>
 
 </html>
